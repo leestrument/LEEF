@@ -1,6 +1,7 @@
 import { Note, NOTE_VELOCITY_MIN, NOTE_VELOCITY_MAX } from './note'
 import { SubNote } from './subNote'
 import { VelocityCurve, VelocityCurveType } from './velocityCurve'
+import { HybridNoteRandomizer } from './hybridNoteRandomizer'
 import LeeArray from '../../helper/leeArray'
 
 export const HYBRID_NOTE_VISIBLE_SUB_NOTE_COUNT_MIN = 1
@@ -16,6 +17,7 @@ export class HybridNote extends Note {
         private _subNotes = Array.from({length : HYBRID_NOTE_VISIBLE_SUB_NOTE_COUNT_MAX}, () => new SubNote),
         private _visibleSubNoteCount = HYBRID_NOTE_VISIBLE_SUB_NOTE_COUNT_MIN,
         private _velocityCurve = new VelocityCurve,
+        private _hybridRandomizer = new HybridNoteRandomizer,
         
     ) { super(pitch, start, duration) }
 

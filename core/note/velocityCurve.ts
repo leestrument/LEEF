@@ -20,4 +20,15 @@ export class VelocityCurve extends LeeRange {
 
     ){ super(NOTE_VELOCITY_MIN, NOTE_VELOCITY_MAX) }
 
+    public setType(type: VelocityCurveType): void {
+
+        this._type = type
+
+    }
+    public getType(): VelocityCurveType {
+
+        return this._type
+
+    }
+ 
 }

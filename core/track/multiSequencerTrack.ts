@@ -5,6 +5,7 @@ export class MultiSequencerTrack extends BaseTrack {
 
     constructor(
 
+        private _index          : number,
         private _multiSequencer = new MultiSequencer
 
     ){ super() }

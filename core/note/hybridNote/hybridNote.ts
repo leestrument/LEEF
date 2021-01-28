@@ -1,6 +1,6 @@
-import { BaseNote } from '../baseNote/baseNote'
-import { SubNote }  from './subNote'
-import { VelocityCurve } from './velocityCurve'
+import { BaseNote }             from '../baseNote/baseNote'
+import { SubNote }              from './subNote'
+import { VelocityCurve }        from './velocityCurve'
 
 export const HYBRID_NOTE_VISIBLE_SUB_NOTES_COUNT_MIN = 1
 export const HYBRID_NOTE_VISIBLE_SUB_NOTES_COUNT_MAX = 32
@@ -42,7 +42,11 @@ export class HyBridNote extends BaseNote {
         return this._visibleSubNoteCount
 
     }
+    public getVelocityCurve(): VelocityCurve {
 
+        return this._velocityCurve
+
+    }
     // implement abstract methods of BaseNote
     public updateStartByRandomizer(): void {}
     public updateGateByRandomizer(): void {}

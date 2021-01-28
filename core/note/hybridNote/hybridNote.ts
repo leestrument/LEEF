@@ -24,7 +24,6 @@ export class HybridNote extends BaseNote {
         
     ){ super(pitch, start, duration) }
 
-
     // setter
     public setVisibleSubNoteCount(subNoteCount: number): void {
 
@@ -41,7 +40,6 @@ export class HybridNote extends BaseNote {
         if (this._visibleSubNoteCount > HYBRID_NOTE_VISIBLE_SUB_NOTES_COUNT_MIN) this._visibleSubNoteCount--
 
     }
-
     public updateStartByStartRandomizer(): void {
 
         // do stuff in Max side..
@@ -68,7 +66,7 @@ export class HybridNote extends BaseNote {
         LeeArray.random(this._visibleSubNoteCount, this._gateRandomizer.getMin(), this._gateRandomizer.getMax(), false).forEach((randomGate, index) => this._subNotes[index].setGate(randomGate))
 
     }
- 
+    
     // getter
     public getVisibleSubNoteCount(): number {
 

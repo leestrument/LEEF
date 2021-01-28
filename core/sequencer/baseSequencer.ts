@@ -13,13 +13,6 @@ export class BaseSequencer {
     ){}
 
     // setter
-    public addNote(pitch: number, start: number, duration: number): void {
-
-        const noteId = LeeRandom.id()
-
-        this._notes[noteId] = new BaseNote(pitch, start, duration)
-
-    }
     public addNoteByGridIndex(gridIndex:number, pitch: number): void {
 
         const duration  = 1 / this._gridCount
@@ -83,8 +76,6 @@ export class BaseSequencer {
         }        
 
     }
-    
-    
     public setGridCount(gridCount: number): void {
 
         this._gridCount = gridCount
@@ -103,13 +94,13 @@ export class BaseSequencer {
 
     }
 
+    // private methods
+    private addNote(pitch: number, start: number, duration: number): void {
+
+        const noteId = LeeRandom.id()
+
+        this._notes[noteId] = new BaseNote(pitch, start, duration)
+
+    }
+
 }
-
-const s = new BaseSequencer
-
-s.addNoteByGridIndex(2, 64)
-s.addNoteByGridIndex(5, 64)
-
-s.selectNotesByRange(0, 0.3)
-
-console.log(s)

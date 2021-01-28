@@ -36,8 +36,6 @@ export class HyBridNote extends BaseNote {
         if (this._visibleSubNoteCount > HYBRID_NOTE_VISIBLE_SUB_NOTES_COUNT_MIN) this._visibleSubNoteCount--
 
     }
-
-    public updateStartByRandomizer(): void {}
  
     // getter
     public getVisibleSubNoteCount(): number {
@@ -50,9 +48,6 @@ export class HyBridNote extends BaseNote {
         return this._velocityCurve
 
     }
-
-    // implement abstract methods of BaseNote
-    
 
     // private setter
     private setSubNotesVelocityUp(velocityMin, velocityMax): void {

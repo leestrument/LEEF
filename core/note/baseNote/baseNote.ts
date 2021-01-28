@@ -5,7 +5,7 @@ export const BASE_NOTE_PROABILITY_DEF   = 1
 export const BASE_NOTE_IS_SELECTED_DEF  = false
 export const BASE_NOTE_IS_ACTIVE_DEF    = false
 
-export abstract class BaseNote {
+export class BaseNote {
 
     constructor(
 
@@ -15,9 +15,6 @@ export abstract class BaseNote {
         private _proability = BASE_NOTE_PROABILITY_DEF,
         private _isSelected = BASE_NOTE_IS_SELECTED_DEF,
         private _isActive   = BASE_NOTE_IS_ACTIVE_DEF,
-
-        private _startRandomizer    = new StartRandomizer,
-        private _gateRandomizer     = new GateRandomizer,
 
     ){}
 
@@ -99,18 +96,5 @@ export abstract class BaseNote {
         return this._isActive === false
 
     }
-    public getStartRandomizer(): StartRandomizer {
-
-        return this._startRandomizer
-
-    }
-    public getGateRandomizer(): GateRandomizer {
-
-        return this._gateRandomizer
-
-    }
-
-    // abstract methods
-    public abstract updateStartByRandomizer(): void;
 
 }

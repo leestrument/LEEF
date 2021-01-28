@@ -65,7 +65,7 @@ export class HybridNote extends BaseNote {
     }
     public updateSubNotesGateByGateRandomizer(): void {
 
-        LeeArray.random(this._visibleSubNoteCount, this._gateRandomizer.getMin(), this._gateRandomizer.getMax()).forEach((randomGate, index) => this._subNotes[index].setGate(randomGate))
+        LeeArray.random(this._visibleSubNoteCount, this._gateRandomizer.getMin(), this._gateRandomizer.getMax(), false).forEach((randomGate, index) => this._subNotes[index].setGate(randomGate))
 
     }
  
@@ -75,12 +75,27 @@ export class HybridNote extends BaseNote {
         return this._visibleSubNoteCount
 
     }
+    public getSubNotes(): SubNote[] {
+
+        return this._subNotes
+
+    }
+    public getStartRandomizer(): StartRandomizer {
+
+        return this._startRandomizer
+
+    }
     public getVelocityCurve(): VelocityCurve {
 
         return this._velocityCurve
 
     }
+    public getGateRandomizer(): GateRandomizer {
 
+        return this._gateRandomizer
+
+    }
+    
     // private setter
     private setSubNotesVelocityUp(velocityMin, velocityMax): void {
 
@@ -104,5 +119,3 @@ export class HybridNote extends BaseNote {
     }
 
 }
-
-console.log(new HybridNote(1, 1, 1))

@@ -11,11 +11,11 @@ export class PianoRoll extends BaseSequencer {
     public moveSelectedNotesRight(): void {}
 
     // Implement BaseSequencer's abstract method.
-    public addNote(pitch: number, start: number, duration: number): void {
+    protected addNote(pitch: number, start: number, duration: number): void {
 
         const noteId = LeeRandom.id()
 
-        this.getNotes()[noteId] = new HybridNote(pitch, start, duration)
+        this._notes[noteId] = new HybridNote(pitch, start, duration)
         
     }
 

@@ -6,7 +6,7 @@ export abstract class BaseSequencer {
 
     constructor(
 
-        private _notes      : { [id: string] : BaseNote } = {}, 
+        protected _notes    : { [id: string] : BaseNote } = {}, 
         private _gridCount  = BASE_SEQUENCER_GRID_COUNT_DEF,
 
     ){}
@@ -99,6 +99,6 @@ export abstract class BaseSequencer {
     }
 
     // abstract method which should be implemented in child class
-    public abstract addNote(pitch: number, start: number, duration: number): void;
+    protected abstract addNote(pitch: number, start: number, duration: number): void;
 
 }

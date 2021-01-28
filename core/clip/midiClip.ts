@@ -1,7 +1,7 @@
 import { BaseClip } from './baseClip'
 import { MultiSequencerTrack } from '../track/multiSequencerTrack'
 
-export class SeqimistClip extends BaseClip {
+export class MidiClip extends BaseClip {
 
     constructor(
 

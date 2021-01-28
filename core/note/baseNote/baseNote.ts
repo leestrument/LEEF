@@ -1,6 +1,3 @@
-import { StartRandomizer }      from './startRandomizer'
-import { GateRandomizer }       from './gateRandomizer'
-
 export const BASE_NOTE_PROABILITY_DEF   = 1
 export const BASE_NOTE_IS_SELECTED_DEF  = false
 export const BASE_NOTE_IS_ACTIVE_DEF    = false

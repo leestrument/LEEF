@@ -104,3 +104,5 @@ export class HybridNote extends BaseNote {
     }
 
 }
+
+console.log(new HybridNote(1, 1, 1))

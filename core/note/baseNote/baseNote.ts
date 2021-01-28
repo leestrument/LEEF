@@ -1,6 +1,5 @@
 import { StartRandomizer }      from './startRandomizer'
 import { GateRandomizer }       from './gateRandomizer'
-import { VelocityRandomizer }   from './velocityRandomizer'
 
 export const BASE_NOTE_PROABILITY_DEF   = 1
 export const BASE_NOTE_IS_SELECTED_DEF  = false

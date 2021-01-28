@@ -9,5 +9,10 @@ export class MultiSequencerTrack extends BaseTrack {
 
     ){ super() }
 
+    public getMultiSequencer(): MultiSequencer {
+
+        return this._multiSequencer
+
+    }
 
 }

@@ -1,9 +1,8 @@
 import { BaseNote } from '../note/baseNote/baseNote'
-import LeeRandom    from '../../helper/leeRandom'
 
 export const BASE_SEQUENCER_GRID_COUNT_DEF = 16
 
-export class BaseSequencer {
+export abstract class BaseSequencer {
 
     constructor(
 
@@ -83,6 +82,11 @@ export class BaseSequencer {
     }
 
     // getter
+    public getNotes() {
+
+        return this._notes
+
+    }
     public getNote(noteId: string) {
 
         return this._notes[noteId]
@@ -94,13 +98,7 @@ export class BaseSequencer {
 
     }
 
-    // private methods
-    private addNote(pitch: number, start: number, duration: number): void {
-
-        const noteId = LeeRandom.id()
-
-        this._notes[noteId] = new BaseNote(pitch, start, duration)
-
-    }
+    // abstract method which should be implemented in child class
+    public abstract addNote(pitch: number, start: number, duration: number): void;
 
 }

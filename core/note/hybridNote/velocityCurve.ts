@@ -9,8 +9,19 @@ export class VelocityCurve extends LeeRange {
 
     constructor(
 
-        _type = VELOCITY_CURVE_TYPE_DEF
+        private _type = VELOCITY_CURVE_TYPE_DEF
 
     ){ super(VELOCITY_CURVE_MIN_DEF, VELOCITY_CURVE_MAX_DEF) }
+
+    public setType(type: VelocityCurveType): void {
+
+        this._type = type
+
+    }
+    public getType(): VelocityCurveType {
+
+        return this._type
+
+    }
 
 }

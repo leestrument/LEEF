@@ -13,8 +13,8 @@ export class HyBridNote extends BaseNote {
         start                           : number, 
         duration                        : number,
         private _visibleSubNoteCount    = HYBRID_NOTE_VISIBLE_SUB_NOTES_COUNT_MIN,
-        private _subNotes               = Array.from({length : HYBRID_NOTE_VISIBLE_SUB_NOTES_COUNT_MAX }, () => new SubNote),
         private _velocityCurve          = new VelocityCurve,
+        private _subNotes               = Array.from({length : HYBRID_NOTE_VISIBLE_SUB_NOTES_COUNT_MAX }, () => new SubNote),
         
     ){ super(pitch, start, duration) }
 

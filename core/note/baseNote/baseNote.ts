@@ -18,7 +18,6 @@ export abstract class BaseNote {
         private _isActive   = BASE_NOTE_IS_ACTIVE_DEF,
 
         private _startRandomizer    = new StartRandomizer,
-        private _velocityRandomizer = new VelocityRandomizer,
         private _gateRandomizer     = new GateRandomizer,
 
     ){}
@@ -106,11 +105,6 @@ export abstract class BaseNote {
         return this._startRandomizer
 
     }
-    public getVelocityRandomizer(): VelocityRandomizer {
-
-        return this._velocityRandomizer
-
-    }
     public getGateRandomizer(): GateRandomizer {
 
         return this._gateRandomizer
@@ -119,7 +113,6 @@ export abstract class BaseNote {
 
     // abstract methods
     public abstract updateStartByRandomizer(): void;
-    public abstract updateVelocityByRandomizer(): void;
     public abstract updateGateByRandomizer(): void;
 
 }

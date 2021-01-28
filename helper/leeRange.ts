@@ -2,7 +2,7 @@ const LEE_RANGE_MIN_DEF         = 0
 const LEE_RANGE_MAX_DEF         = 1
 const LEE_RANGE_IS_ACTIVE_DEF   = false
 
-export default class LeeRange {
+export class LeeRange {
 
     constructor(    
 

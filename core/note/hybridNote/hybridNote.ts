@@ -4,7 +4,7 @@ import { GateRandomizer }       from '../randomizer/gateRandomizer'
 import { SubNote }              from './subNote'
 import { VelocityCurveType }    from './velocityCurveType'
 import { VelocityCurve }        from './velocityCurve'
-import LeeArray                 from '../../../helper/leeArray'
+import LeeArray                 from '../../helper/leeArray'
 
 export const HYBRID_NOTE_VISIBLE_SUB_NOTES_COUNT_MIN = 1
 export const HYBRID_NOTE_VISIBLE_SUB_NOTES_COUNT_MAX = 32

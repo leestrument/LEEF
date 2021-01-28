@@ -1,6 +1,6 @@
 import { BaseSequencer }    from './baseSequencer'
 import { HybridNote }       from '../note/hybridNote/hybridNote'
-import LeeRandom            from '../../helper/leeRandom'
+import LeeRandom            from '../helper/leeRandom'
 
 export class HybridNoteSequencer extends BaseSequencer {
 

@@ -1,4 +1,4 @@
-import { LeeRange } from '../../../helper/leeRange'
+import { LeeRange } from '../../helper/leeRange'
 import { VelocityCurveType } from './velocityCurveType'
 
 export const VELOCITY_CURVE_TYPE_DEF    = VelocityCurveType.Up

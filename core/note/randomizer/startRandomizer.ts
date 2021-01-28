@@ -1,4 +1,4 @@
-import { LeeRange } from '../../../helper/leeRange'
+import { LeeRange } from '../../helper/leeRange'
 
 const START_RANDOMIZER_MIN_DEF = 0
 const START_RANDOMIZER_MAX_DEF = 0

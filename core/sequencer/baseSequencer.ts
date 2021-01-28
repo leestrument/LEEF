@@ -20,4 +20,10 @@ export class BaseSequencer {
 
     }
 
+    public removeNoteById(noteId: string): void {
+
+        delete this._notes[noteId]
+
+    }
+
 }

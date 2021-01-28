@@ -1,5 +1,7 @@
-const SUB_NOTE_VELOCITY_DEF = 64
-const SUB_NOTE_GATE_DEF     = 1
+export const SUB_NOTE_VELOCITY_MIN = 1
+export const SUB_NOTE_VELOCITY_MAX = 127
+export const SUB_NOTE_VELOCITY_DEF = 64
+export const SUB_NOTE_GATE_DEF     = 1
 
 export class SubNote {
 

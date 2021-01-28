@@ -1,6 +1,7 @@
-import { BaseNote }             from '../baseNote/baseNote'
-import { SubNote }              from './subNote'
-import { VelocityCurve }        from './velocityCurve'
+import { BaseNote } from '../baseNote/baseNote'
+import { SubNote } from './subNote'
+import { VelocityCurve } from './velocityCurve'
+import LeeArray from '../../../helper/leeArray'
 
 export const HYBRID_NOTE_VISIBLE_SUB_NOTES_COUNT_MIN = 1
 export const HYBRID_NOTE_VISIBLE_SUB_NOTES_COUNT_MAX = 32
@@ -36,6 +37,8 @@ export class HyBridNote extends BaseNote {
 
     }
 
+    public updateStartByRandomizer(): void {}
+ 
     // getter
     public getVisibleSubNoteCount(): number {
 
@@ -47,9 +50,30 @@ export class HyBridNote extends BaseNote {
         return this._velocityCurve
 
     }
-    // implement abstract methods of BaseNote
-    public updateStartByRandomizer(): void {}
-    public updateGateByRandomizer(): void {}
 
+    // implement abstract methods of BaseNote
+    
+
+    // private setter
+    private setSubNotesVelocityUp(velocityMin, velocityMax): void {
+
+        LeeArray.up(this._visibleSubNoteCount, velocityMin, velocityMax).forEach((velocity, index) => this._subNotes[index].setVelocity(velocity))
+
+    }
+    private setSubNotesVelocityDown(velocityMin, velocityMax): void {
+
+        LeeArray.down(this._visibleSubNoteCount, velocityMin, velocityMax).forEach((velocity, index) => this._subNotes[index].setVelocity(velocity))
+
+    }
+    private setSubNotesVelocityRandom(velocityMin, velocityMax): void {
+
+        LeeArray.random(this._visibleSubNoteCount, velocityMin, velocityMax).forEach((velocity, index) => this._subNotes[index].setVelocity(velocity))
+
+    }
+    private setSubNotesVelocityFixed(velocityToFix: number): void {
+
+        LeeArray.fill(this._visibleSubNoteCount, velocityToFix).forEach((velocity, index) => this._subNotes[index].setVelocity(velocity))
+
+    }
 
 }

@@ -112,6 +112,5 @@ export abstract class BaseNote {
 
     // abstract methods
     public abstract updateStartByRandomizer(): void;
-    public abstract updateGateByRandomizer(): void;
 
 }

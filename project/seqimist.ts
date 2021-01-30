@@ -4,7 +4,7 @@ export class SEQimist {
 
     constructor( 
         
-        private _timeline = new SimpleTimeline
+        public _timeline = new SimpleTimeline
         
     ){}
 

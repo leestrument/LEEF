@@ -14,6 +14,7 @@ export class SimpleTimeline {
     // setter
     public addClip(): void {
 
+        this.unselectAllClips()
         this._clips.push(new MidiClip)
 
     }
@@ -35,22 +36,16 @@ export class SimpleTimeline {
         return this._clips
 
     }
-    public getClipsColors(): string[] {
+    public getClip(clipIndex: number): MidiClip {
 
-        let colors: string[] = []
-
-        this._clips.forEach(clip => colors.push(clip.getColor()))
-
-        return colors
+        return this._clips[clipIndex]
 
     }
-    public getClipsSelectedStates(): boolean[] {
+    
+    // private 
+    private unselectAllClips(): void {
 
-        let states: boolean[] = []
-
-        this._clips.forEach(clip => states.push(clip.isSelected()))
-
-        return states
+        this._clips.forEach(clip => clip.deselect())
 
     }
 

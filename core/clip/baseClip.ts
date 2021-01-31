@@ -1,6 +1,6 @@
 import LeeRandom from '../helper/leeRandom'
 
-export const BASE_CLIP_IS_SELECTED_DEF = false
+export const BASE_CLIP_IS_SELECTED_DEF = true
 
 export class BaseClip {
 

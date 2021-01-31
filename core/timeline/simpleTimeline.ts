@@ -10,6 +10,8 @@ export class SimpleTimeline {
 
     ){}
 
+
+    // setter
     public addClip(): void {
 
         this._clips.push(new MidiClip)
@@ -22,6 +24,7 @@ export class SimpleTimeline {
     }
     public removeSelectedClips(): void {}
 
+    // getter
     public getClips(): MidiClip[] {
 
         return this._clips
@@ -30,6 +33,15 @@ export class SimpleTimeline {
     public getClipCount(): number {
 
         return this._clips.length
+
+    }
+    public getClipsColors(): string[] {
+
+        let colors: string[] = []
+
+        this._clips.forEach(clip => colors.push(clip.getColor()))
+
+        return colors
 
     }
 

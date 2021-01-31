@@ -22,11 +22,10 @@ export class SimpleTimeline {
     }
     public removeSelectedClips(): void {}
 
-    public getClips(): MidiClip {
+    public getClips(): MidiClip[] {
 
         return this._clips
 
     }
-
 
 }

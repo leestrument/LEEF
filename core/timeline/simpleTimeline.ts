@@ -14,15 +14,27 @@ export class SimpleTimeline {
     // setter
     public addClip(): void {
 
-        this.unselectAllClips()
         this._clips.push(new MidiClip)
+        this.unselectOtherClips(this.getClipCount() - 1)
 
     }
-    public selectClip(clipIndex: number): void {
+    public selectSingleClip(clipIndex: number): void {
+
+        this._clips[clipIndex].select()
+        this.unselectOtherClips(clipIndex)
+
+    }
+    public selectAnotherClip(clipIndex: number): void {
 
         this._clips[clipIndex].select()
 
     }
+    public selectAllClips(): void {
+
+        this._clips.forEach(clip => clip.select())
+
+    }
+
     public removeSelectedClips(): void {}
 
     // getter
@@ -43,10 +55,15 @@ export class SimpleTimeline {
     }
     
     // private 
-    private unselectAllClips(): void {
 
-        this._clips.forEach(clip => clip.deselect())
+    private unselectOtherClips(clipIndexToExclude: number) {
 
+        this._clips.forEach((clip, clipIndex) => { 
+            
+            if (clipIndex !== clipIndexToExclude) clip.deselect() 
+        
+        })
+    
     }
 
 }

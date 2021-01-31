@@ -27,5 +27,10 @@ export class SimpleTimeline {
         return this._clips
 
     }
+    public getClipCount(): number {
+
+        return this._clips.length
+
+    }
 
 }

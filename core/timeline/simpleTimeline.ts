@@ -1,6 +1,6 @@
 import { MidiClip } from '../clip/midiClip'
 
-const MIDI_CLIP_COUNT_DEF = 8
+const MIDI_CLIP_COUNT_DEF = 1
 
 export class SimpleTimeline {
 

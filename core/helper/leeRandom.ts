@@ -20,5 +20,6 @@ export default {
 
     range,
     id,
+    color,
 
 }

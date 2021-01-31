@@ -1,10 +1,12 @@
+import LeeRandom from '../helper/leeRandom'
+
 export const BASE_CLIP_IS_SELECTED_DEF = false
 
 export class BaseClip {
 
     constructor(
 
-        private _color      = 'black',
+        private _color      = LeeRandom.color(),
         private _isSelected = BASE_CLIP_IS_SELECTED_DEF
 
     ){}

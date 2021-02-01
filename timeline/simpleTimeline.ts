@@ -66,7 +66,7 @@ export class SimpleTimeline {
 
     public removeSelectedClips(): void {}
 
-    public setSelectedClipsColor(color: string) {
+    public setSelectedClipsColor(color: string): void {
 
         this._clips.forEach(clip => {
 
@@ -75,6 +75,12 @@ export class SimpleTimeline {
         })
 
     }
+    public setSelectedClipsVisibleTrackCount(trackCount: number): void {
+
+        this._clips.forEach(clip => clip.setVisibleTrackCount(trackCount))
+
+    }
+
     // getter
     public getClipCount(): number {
 

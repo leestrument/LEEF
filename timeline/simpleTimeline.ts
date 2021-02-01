@@ -66,7 +66,7 @@ export class SimpleTimeline {
         })
 
     }
-
+    // 
 
     // getter
     public getClipCount(): number {

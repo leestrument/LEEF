@@ -35,9 +35,10 @@ export class SimpleTimeline {
     }
     public selectAnotherClip(clipIndex: number): void {
 
-        this._clips[clipIndex].toggle()
-        this._lastSelectedClipIndex = clipIndex
+        if (this._multipleClipsAreSelected) this._clips[clipIndex].toggle()
+        else this._clips[clipIndex].select()
 
+        this._lastSelectedClipIndex = clipIndex
         this.updateMultipleClipsAreSelected()
 
     }

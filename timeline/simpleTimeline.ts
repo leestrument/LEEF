@@ -36,7 +36,6 @@ export class SimpleTimeline {
         this._prevSelectedClipIndex = clipIndex
 
     }
-    
     public selectMultipleClipsByRange(clipIndex: number): void {
 
         const startIndex = Math.min(this._prevSelectedClipIndex, clipIndex)
@@ -50,7 +49,6 @@ export class SimpleTimeline {
         })
 
     }
-
     public selectAllClips(): void {
 
         this._clips.forEach(clip => clip.select())
@@ -58,6 +56,17 @@ export class SimpleTimeline {
     }
 
     public removeSelectedClips(): void {}
+
+    public setSelectedClipsColor(color: string) {
+
+        this._clips.forEach(clip => {
+
+            if (clip.isSelected()) clip.setColor(color)
+
+        })
+
+    }
+
 
     // getter
     public getClipCount(): number {

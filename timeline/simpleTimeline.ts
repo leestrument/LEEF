@@ -6,7 +6,8 @@ export class SimpleTimeline {
 
     constructor(
 
-        private _clips = Array.from({ length: MIDI_CLIP_COUNT_DEF }, () => new MidiClip) 
+        private _clips = Array.from({ length: MIDI_CLIP_COUNT_DEF }, () => new MidiClip), 
+        private _prevSelectedClipIndex = 0,
 
     ){}
 

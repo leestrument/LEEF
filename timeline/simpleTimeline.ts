@@ -11,25 +11,46 @@ export class SimpleTimeline {
 
     ){}
 
-
     // setter
     public addClip(): void {
 
         this._clips.push(new MidiClip)
-        this.unselectOtherClips(this.getClipCount() - 1)
+
+        const lastClipIndex = this.getClipCount() - 1
+
+        this.unselectOtherClips(lastClipIndex)
+        this._prevSelectedClipIndex = lastClipIndex
 
     }
     public selectSingleClip(clipIndex: number): void {
 
         this._clips[clipIndex].select()
+
         this.unselectOtherClips(clipIndex)
+        this._prevSelectedClipIndex = clipIndex
 
     }
     public selectAnotherClip(clipIndex: number): void {
 
         this._clips[clipIndex].select()
+        this._prevSelectedClipIndex = clipIndex
 
     }
+    
+    public selectMultipleClipsByRange(clipIndex: number): void {
+
+        const startIndex = Math.min(this._prevSelectedClipIndex, clipIndex)
+        const endIndex = Math.max(this._prevSelectedClipIndex, clipIndex)
+
+        this._clips.forEach((clip, clipIndex) => {
+
+            if (clipIndex >= startIndex && clipIndex <= endIndex) clip.select()
+            else clip.deselect()
+
+        })
+
+    }
+
     public selectAllClips(): void {
 
         this._clips.forEach(clip => clip.select())

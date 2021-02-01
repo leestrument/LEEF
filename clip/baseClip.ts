@@ -28,6 +28,12 @@ export class BaseClip {
 
     }
 
+    public toggle(): void {
+
+        this._isSelected = !this._isSelected
+
+    }
+
     // getter
     public getColor(): string {
 

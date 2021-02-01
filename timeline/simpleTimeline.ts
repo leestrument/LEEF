@@ -8,6 +8,7 @@ export class SimpleTimeline {
 
         private _clips = Array.from({ length: MIDI_CLIP_COUNT_DEF }, () => new MidiClip), 
         private _lastSelectedClipIndex = 0,
+        private _multipleClipsAreSelected = false,
 
     ){}
 
@@ -20,6 +21,7 @@ export class SimpleTimeline {
 
         this.unselectOtherClips(lastClipIndex)
         this._lastSelectedClipIndex = lastClipIndex
+        this._multipleClipsAreSelected = false
 
     }
     public selectSingleClip(clipIndex: number): void {
@@ -28,12 +30,15 @@ export class SimpleTimeline {
 
         this.unselectOtherClips(clipIndex)
         this._lastSelectedClipIndex = clipIndex
+        this._multipleClipsAreSelected = false
 
     }
     public selectAnotherClip(clipIndex: number): void {
 
-        this._clips[clipIndex].select()
+        this._clips[clipIndex].toggle()
         this._lastSelectedClipIndex = clipIndex
+
+        this.updateMultipleClipsAreSelected()
 
     }
     public selectMultipleClipsByRange(clipIndex: number): void {
@@ -48,10 +53,13 @@ export class SimpleTimeline {
 
         })
 
+        this.updateMultipleClipsAreSelected()
+
     }
     public selectAllClips(): void {
 
         this._clips.forEach(clip => clip.select())
+        this._multipleClipsAreSelected = true
 
     }
 
@@ -82,9 +90,13 @@ export class SimpleTimeline {
         return this._clips[clipIndex]
 
     }
+    public multipleClipsAreSelected(): boolean {
+
+        return this._multipleClipsAreSelected
+
+    }
     
     // private 
-
     private unselectOtherClips(clipIndexToExclude: number) {
 
         this._clips.forEach((clip, clipIndex) => { 
@@ -93,6 +105,18 @@ export class SimpleTimeline {
         
         })
     
+    }
+    private updateMultipleClipsAreSelected(): void {
+
+        let counter = 0
+        let state   = false
+
+        this._clips.forEach(clip => { if (clip.isSelected()) counter++ })
+
+        if (counter > 1) state = true
+
+        this._multipleClipsAreSelected = state
+
     }
 
 }

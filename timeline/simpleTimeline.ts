@@ -7,7 +7,7 @@ export class SimpleTimeline {
     constructor(
 
         private _clips = Array.from({ length: MIDI_CLIP_COUNT_DEF }, () => new MidiClip), 
-        private _prevSelectedClipIndex = 0,
+        private _lastSelectedClipIndex = 0,
 
     ){}
 
@@ -19,7 +19,7 @@ export class SimpleTimeline {
         const lastClipIndex = this.getClipCount() - 1
 
         this.unselectOtherClips(lastClipIndex)
-        this._prevSelectedClipIndex = lastClipIndex
+        this._lastSelectedClipIndex = lastClipIndex
 
     }
     public selectSingleClip(clipIndex: number): void {
@@ -27,19 +27,19 @@ export class SimpleTimeline {
         this._clips[clipIndex].select()
 
         this.unselectOtherClips(clipIndex)
-        this._prevSelectedClipIndex = clipIndex
+        this._lastSelectedClipIndex = clipIndex
 
     }
     public selectAnotherClip(clipIndex: number): void {
 
         this._clips[clipIndex].select()
-        this._prevSelectedClipIndex = clipIndex
+        this._lastSelectedClipIndex = clipIndex
 
     }
     public selectMultipleClipsByRange(clipIndex: number): void {
 
-        const startIndex = Math.min(this._prevSelectedClipIndex, clipIndex)
-        const endIndex = Math.max(this._prevSelectedClipIndex, clipIndex)
+        const startIndex = Math.min(this._lastSelectedClipIndex, clipIndex)
+        const endIndex = Math.max(this._lastSelectedClipIndex, clipIndex)
 
         this._clips.forEach((clip, clipIndex) => {
 
@@ -66,8 +66,6 @@ export class SimpleTimeline {
         })
 
     }
-    // //
-
     // getter
     public getClipCount(): number {
 
